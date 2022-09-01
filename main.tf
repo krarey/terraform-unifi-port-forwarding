@@ -1,6 +1,6 @@
 resource "unifi_port_forward" "service" {
   for_each               = var.services
-  name                   = each.key
+  name                   = each.value.id
   src_ip                 = "any"
   fwd_ip                 = each.value.address
   fwd_port               = each.value.port
